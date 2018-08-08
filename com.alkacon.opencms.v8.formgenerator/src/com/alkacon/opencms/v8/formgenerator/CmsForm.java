@@ -35,6 +35,7 @@ package com.alkacon.opencms.v8.formgenerator;
 import static com.alkacon.opencms.v8.formgenerator.CmsFormContentUtil.getContentStringValue;
 import static com.alkacon.opencms.v8.formgenerator.CmsFormContentUtil.getContentValue;
 import static com.alkacon.opencms.v8.formgenerator.CmsFormContentUtil.getContentValues;
+import static com.alkacon.opencms.v8.formgenerator.CmsFormContentUtil.hasValue;
 
 import org.opencms.configuration.CmsConfigurationException;
 import org.opencms.file.CmsFile;
@@ -2298,7 +2299,7 @@ public class CmsForm {
                 getConfigurationValue(stringValue, messages.key("form.confirmation.checkbox")));
         }
 
-        if (content.hasValue(NODE_OPTIONALEXPIRATION, locale)) {
+        if (hasValue(content, NODE_OPTIONALEXPIRATION, locale)) {
             // optional confirmation mail nodes
             pathPrefix = NODE_OPTIONALEXPIRATION + "/";
             stringValue = getContentStringValue(content, cms, pathPrefix + NODE_DATE, locale);
@@ -2327,7 +2328,7 @@ public class CmsForm {
             }
         }
 
-        if (content.hasValue(NODE_OPTIONALRELEASE, locale)) {
+        if (hasValue(content, NODE_OPTIONALRELEASE, locale)) {
             // optional form release nodes
             pathPrefix = NODE_OPTIONALRELEASE + "/";
             stringValue = getContentStringValue(content, cms, pathPrefix + NODE_DATE, locale);

@@ -83,6 +83,11 @@ public final class CmsFormContentUtil {
         return content.getValue(getNestedPathPrefix(content, NODE_NESTED_FORM, locale) + path, locale);
     }
 
+    public static boolean hasValue(CmsXmlContent content, String path, Locale locale) {
+
+        return content.hasValue(getNestedPathPrefix(content, NODE_NESTED_FORM, locale) + path, locale);
+    }
+
     /**
      * Returns a list of content values from the given content, but from a nested path if a NODE_NESTED_FORM node
      * is present.<p>
